@@ -1,0 +1,44 @@
+.zoom-main {
+    background-color:black;
+}
+
+.zoom-link {
+    margin-top:1em;
+}
+
+.zoom-link-div {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+.zoom-link-div-btn {
+    padding:2px;
+    margin:2px
+}
+
+.zoom-pic-div-placeholder {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+.zoom-pic {
+    width:100%;
+    max-width:1200px;
+    padding:8px;
+    border-radius:10px;
+}
+
+.zoom-link2 {
+    margin-top:1em;
+}
+
+.zoom-link-div2 {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}

@@ -1,0 +1,10 @@
+---
+    UUID: "fake01"
+    Date: "01-06-2021"
+    Name: "foo"
+    Email: "foo@gmail.com"
+    Message: "Curt and AlphaTree were great."
+    Sig: " - foo"
+    Approved: "no"
+    Quarintine: "yes"
+    Delete: "no"

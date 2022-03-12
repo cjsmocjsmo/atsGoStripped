@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  db:
+    image: mongo:4.1
+    container_name: "atsGo_container"
+    networks:
+      - atsGo
+    ports:
+      - 27017:27017
+
+  atsGo:
+    image: atsgo:1.3.4
+    build: .
+    environment:
+      - ATSGO_SERVER_ADDR=http://alphatree.services
+    networks:
+      - atsGo
+    ports:
+      - 80:80
+    depends_on:
+      - db
+      
+networks:
+  atsGo:
