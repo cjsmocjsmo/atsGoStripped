@@ -8,6 +8,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -497,6 +498,9 @@ func main() {
 	r.HandleFunc("/DeleteReview", SetReviewToDeleteHandler)
 	r.HandleFunc("/atq", AddToQuarantineHandler)
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
-	port := ":80"
-	http.ListenAndServe(port, (r))
+	// port := ":80"
+	// http.ListenAndServe(port, (r))
+	http.ListenAndServe(":80", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}),
+		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}),
+		handlers.AllowedOrigins([]string{"*"}))(r))
 }
