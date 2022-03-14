@@ -87,6 +87,7 @@ func CheckError(err error, msg string) {
 ///////////////////////////////////////////////////////////////////////////////
 
 func ShowIndex(w http.ResponseWriter, r *http.Request) {
+	// http.Redirect(w, r, "PATH TO ATSGOASTRO", http.StatusSeeOther)
 	tmppath := "./static/index.html"
 	tmpl := template.Must(template.ParseFiles(tmppath))
 	tmpl.Execute(w, tmpl)
@@ -498,8 +499,6 @@ func main() {
 	r.HandleFunc("/DeleteReview", SetReviewToDeleteHandler)
 	r.HandleFunc("/atq", AddToQuarantineHandler)
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
-	// port := ":80"
-	// http.ListenAndServe(port, (r))
 	http.ListenAndServe(":80", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}),
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}),
 		handlers.AllowedOrigins([]string{"*"}))(r))
