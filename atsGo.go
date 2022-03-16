@@ -87,10 +87,10 @@ func CheckError(err error, msg string) {
 ///////////////////////////////////////////////////////////////////////////////
 
 func ShowIndex(w http.ResponseWriter, r *http.Request) {
-	// http.Redirect(w, r, "PATH TO ATSGOASTRO", http.StatusSeeOther)
-	tmppath := "./static/index.html"
-	tmpl := template.Must(template.ParseFiles(tmppath))
-	tmpl.Execute(w, tmpl)
+	http.Redirect(w, r, "https://alphatreeservice.pages.dev", http.StatusSeeOther)
+	// tmppath := "./static/index.html"
+	// tmpl := template.Must(template.ParseFiles(tmppath))
+	// tmpl.Execute(w, tmpl)
 }
 
 func ShowAdmin(w http.ResponseWriter, r *http.Request) {
