@@ -6,14 +6,13 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && \
-apt-get update && \
+apt-get update -y && \
 apt-get dist-upgrade -y && \
 apt-get auto-clean -y && \
 apt-get auto-remove -y && \
-apt-get install docker-ce docker-ce-cli containerd.io && \
+apt-get install docker-ce docker-ce-cli containerd.io -y && \
 openssl req  -new  -newkey rsa:2048  -nodes  -keyout alphatree.key  -out alphatree.csr && \
 openssl  x509  -req  -days 365  -in alphatree.csr  -signkey alphatree.key  -out alphatree.crt && \
-cd atsGoStripped && \
 docker-compose up -d --build
 # snapd && \
 # snap install core && \ 

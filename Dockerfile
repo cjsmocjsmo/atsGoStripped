@@ -28,9 +28,9 @@ RUN \
   mkdir ./certs
 
 
-COPY ../alphatree.key ./certs/
-COPY ../alphatree.csr ./certs/
-COPY ../alphatree.crt ./certs/
+COPY alphatree.key ./certs/
+COPY alphatree.csr ./certs/
+COPY alphatree.crt ./certs/
 COPY backup/*.json ./backup/
 COPY backup/*.gz ./backup/
 COPY static/*.html ./static/
