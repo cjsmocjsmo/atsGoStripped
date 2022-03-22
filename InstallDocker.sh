@@ -12,13 +12,12 @@ apt-get auto-remove -y && \
 
 
 
-apt-get install -y docker-ce docker-ce-cli containerd.io && \
-openssl req  -new  -newkey rsa:2048  -nodes  -keyout alphatree.key  -out alphatree.csr && \
-openssl  x509  -req  -days 365  -in alphatree.csr  -signkey alphatree.key  -out alphatree.crt && \
+apt-get install -y docker-ce docker-ce-cli containerd.io snapd nano && \
+snap install core && \ 
+snap refresh core && \
+snap install --classic certbot && \
+certbot certonly --standalone
+# openssl req  -new  -newkey rsa:2048  -nodes  -keyout alphatree.key  -out alphatree.csr && \
+# openssl  x509  -req  -days 365  -in alphatree.csr  -signkey alphatree.key  -out alphatree.crt && \
 apt-get install -y docker-compose
-docker-compose up -d --build
-# snapd && \
-# snap install core && \ 
-# snap refresh core && \
-# snap install --classic certbot && \
-# certbot certonly --standalone
+# docker-compose up -d --build
