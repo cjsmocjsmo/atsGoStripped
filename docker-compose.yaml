@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   db:
-    image: mongo:4.1
+    image: mongo:4.4
     container_name: "atsGo_container"
     networks:
       - atsGo
