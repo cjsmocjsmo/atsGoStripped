@@ -18,8 +18,27 @@ services:
       - atsGo
     ports:
       - 80:80
+    volumes:
+      - atsgocsrvol:/root/csr/
+      - atsgokeysvol:/root/keys/
     depends_on:
       - db
       
 networks:
   atsGo:
+
+volumes:
+  atsgocsrvol:
+    driver: local
+    driver_opts:
+      type: none
+      device: /etc/letsencrypt/csr
+      # device: /media/pipi/AMPGOTEST/Data/db
+      o: bind
+  atsgokeyvol:
+    driver: local
+    driver_opts:
+      type: none
+      device: /etc/letsencrypt/keys
+      # device: /media/pipi/AMPGOTEST/Data/db
+      o: bind
