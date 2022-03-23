@@ -32,13 +32,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /etc/letsencrypt/csr
+      device: /etc/letsencrypt/csr/
       # device: /media/pipi/AMPGOTEST/Data/db
       o: bind
   atsgokeysvol:
     driver: local
     driver_opts:
       type: none
-      device: /etc/letsencrypt/keys
+      device: /etc/letsencrypt/keys/
       # device: /media/pipi/AMPGOTEST/Data/db
       o: bind
