@@ -499,7 +499,7 @@ func main() {
 	r.HandleFunc("/DeleteReview", SetReviewToDeleteHandler)
 	r.HandleFunc("/atq", AddToQuarantineHandler)
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
-	http.ListenAndServeTLS(":80", "/root/certs/alphatree.crt", "/root/certs/alphatree.key",
+	http.ListenAndServeTLS(":80", "/etc/letsencrypt/csr/0001_csr-certbot.pem", "/etc/letsencrypt/keys/0001_key-certbot.pem",
 		handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}),
 			handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}),
 			handlers.AllowedOrigins([]string{"*"}))(r))
