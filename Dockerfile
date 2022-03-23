@@ -25,7 +25,8 @@ RUN \
   mkdir ./fsData/thumb && \
   mkdir ./fsData/crap && \
   mkdir ./logs && \
-  mkdir ./certs
+  mkdir ./keys && \
+  mkdir ./csr
 
 COPY backup/*.json ./backup/
 COPY backup/*.gz ./backup/

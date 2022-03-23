@@ -35,7 +35,7 @@ volumes:
       device: /etc/letsencrypt/csr
       # device: /media/pipi/AMPGOTEST/Data/db
       o: bind
-  atsgokeyvol:
+  atsgokeysvol:
     driver: local
     driver_opts:
       type: none
